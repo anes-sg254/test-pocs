@@ -18,6 +18,6 @@ jobs:
       -name: Install dependencies
        shell: bash
        run:
-         pip install fastapi locust pytest uvico
+         pip install fastapi locust pytest uvicorn coverage
       -name: Execution de pytest
-       run : pytest
+       run : coverage run -m pytest; coverage xml
