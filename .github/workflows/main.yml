@@ -19,5 +19,11 @@ jobs:
        shell: bash
        run:
          pip install fastapi locust pytest uvicorn coverage
+
       -name: Execution de pytest
        run : coverage run -m pytest; coverage xml
+
+      -name: Python Coverage 
+       uses: orgoro/coverage@v3.2
+       with:
+         token: ${{secrets.GITHUB_TOKEN}}
